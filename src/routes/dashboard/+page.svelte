@@ -1,0 +1,2 @@
+<h3>Dashboard</h3>
+<p>This is the dashboard page</p>
