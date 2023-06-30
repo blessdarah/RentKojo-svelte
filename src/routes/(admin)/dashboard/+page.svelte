@@ -1,7 +1,5 @@
 <script>
     import axios from 'axios'
-    import {afternNavigate} from '$app/navigation'
-
     let users = [];
 
     afternNavigate = function() {
