@@ -29,8 +29,9 @@
         <label for="password">password</label>
         <input type="password" id="password" bind:value={password} required>
     </div>
-        <p class="text-sm mb-3">Don't have an account? <a href="/signup" class="text-teal-400">Sign up</a></p>
+    <p class="text-sm mb-3">Don't have an account? <a href="/signup" class="text-teal-400">Sign up</a></p>
     <button type="submit" role="button" class="bg-teal-500 text-teal-700">Login</button>
+    <a href="/forgot-password" class="text-sm mb-3">I've forgotten my password</a>
 </form>
 
 <style>

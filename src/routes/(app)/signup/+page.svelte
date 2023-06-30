@@ -1,23 +1,21 @@
 <script>
+    import axios from 'axios'
+    import {goto} from '$app/navigation'
+
     let firstname, lastname, username, email, phoneNumber, password = '';
     $:  formData = {
         firstname, lastname, username, email, phoneNumber, password 
     }
-    function login() {
-        fetch('https://rentkojo.com/api/users', {
-            method: 'POST',
-            body: JSON.stringify(formData),
-            headers: {
-                ContenType: 'application/json'
-            }
-        }).then(response => response.json())
-        .then(data => console.log('data'))
+    function signup() {
+        axios.post('https://rentkojo.com/api/users', formData)
+            .then(response => response.data?.success)
+        .then(data => goto('/login'))
         .catch(err => console.log(err))
         console.log('values: ', formData)
     }
 </script>
 
-<form action="#" on:submit|preventDefault={login}>
+<form on:submit|preventDefault={signup}>
     <h3 class="font-black text-center mb-4 text-4xl">Sign Up</h3>
     <div class="flex gap-3">
         <div>
