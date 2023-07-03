@@ -1,15 +1,12 @@
-<script>
+<script lang="ts">
     import axios from 'axios'
-    let users = [];
+    import type {PageData} from './$types'
 
-    afternNavigate = function() {
-        axios.get('https://rentkojo.com/api/users')
-            .then(response => response.data?.success)
-        .then(result => users = [...result.data.data])
-        .catch(err => console.log(err))
-        console.log('users: ', users)
-    }
+    export let data: PageData;
+    console.log(data.categories)
 </script>
 
 <h3>Dashboard</h3>
 <p>Users</p>
+
+<div>{@html data.categories}</div>
