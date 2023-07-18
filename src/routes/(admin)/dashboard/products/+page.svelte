@@ -5,7 +5,7 @@
 	import Empty from '../../../../components/Empty.svelte';
 
 	export let data: PageData;
-	console.log('data: ', data);
+	console.log(data.products);
 </script>
 
 <section class="flex items-center justify-between my-4">
@@ -15,10 +15,9 @@
 		<button>create</button>
 	</form>
 </section>
-
-{#if data.tags.length > 0}
+{#if data.products.data.length > 0}
 	<Grid
-		data={data.tags}
+		data={data.products.data}
 		columns={[
 			'name',
 			'description',
@@ -52,7 +51,7 @@
 		pagination
 	/>
 {:else}
-	<Empty description="No tags have been created" />
+	<Empty description="No products have been created" />
 {/if}
 
 <style global>

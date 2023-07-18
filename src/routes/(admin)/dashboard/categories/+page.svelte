@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { h } from 'gridjs';
+	import { Cell, Row, h } from 'gridjs';
 	import Grid from 'gridjs-svelte';
 	import Empty from '../../../../components/Empty.svelte';
 
@@ -16,15 +16,15 @@
 	</form>
 </section>
 
-{#if data.tags.length > 0}
+{#if data.categories.length > 0}
 	<Grid
-		data={data.tags}
+		data={data.categories}
 		columns={[
 			'name',
 			'description',
 			{
 				name: 'Actions',
-				formatter: (cell, row) => {
+				formatter: (cell: Cell, row: Row) => {
 					return [
 						h(
 							'button',
