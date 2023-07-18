@@ -35,7 +35,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@picocss/pico": "^1.5.10",
 		"axios": "^1.4.0",
 		"gridjs": "^6.0.6",
 		"gridjs-svelte": "^2.1.1"

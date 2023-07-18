@@ -1,5 +1,4 @@
 <script sco>
-	// import '@picocss/pico';
 	import '../../app.css';
 </script>
 
