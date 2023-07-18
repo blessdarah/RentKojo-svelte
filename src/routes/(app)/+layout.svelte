@@ -7,11 +7,11 @@
 	<a href="/">
 		<strong>Logo</strong>
 	</a>
-	<nav class="text-sm flex space-x-3 items-center">
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/dashboard">Dashboard</a>
-		<a href="/login" role="button" class="text-sm rounded-full">Login</a>
+	<nav class="flex space-x-6 text-gray-600 items-center">
+		<a class="hover:text-teal-400 hover:underline" href="/">Home</a>
+		<a class="hover:text-teal-400 hover:underline" href="/about">About</a>
+		<a class="hover:text-teal-400 hover:underline" href="/dashboard">Dashboard</a>
+		<a href="/login" class="rounded-full bg-teal-400 px-6 py-3 text-white">Login</a>
 	</nav>
 </header>
 <main>

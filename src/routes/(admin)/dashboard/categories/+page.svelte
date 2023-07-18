@@ -5,7 +5,6 @@
 	import Empty from '../../../../components/Empty.svelte';
 
 	export let data: PageData;
-	console.log('data: ', data);
 </script>
 
 <section class="flex items-center justify-between my-4">
@@ -24,7 +23,7 @@
 			'description',
 			{
 				name: 'Actions',
-				formatter: (cell: Cell, row: Row) => {
+				formatter: (cell, row) => {
 					return [
 						h(
 							'button',
