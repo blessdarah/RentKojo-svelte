@@ -2,11 +2,7 @@
 	import { goto } from '$app/navigation';
 	import type { Category } from '../../../../../models/category';
 	import { categoryStore } from '../../../../../store';
-	import type { PageData } from './$types';
-	export let data: PageData;
-	let category: Category = data.category;
-
-	categoryStore.set(data.category);
+	let category: Category;
 
 	categoryStore.subscribe((value) => {
 		category = value;
@@ -30,6 +26,10 @@
 			<tr>
 				<td>Name</td>
 				<td>{category.name}</td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td>{category.description}</td>
 			</tr>
 		</tbody>
 	</table>

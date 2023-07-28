@@ -1,8 +1,17 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import Table from '../../../../components/Table.svelte';
 	import { goto } from '$app/navigation';
-	let data: PageData;
+	import type { Category } from '../../../../models/category';
+	import { categoryStore } from '../../../../store';
+	import Table from '../../../../components/Table.svelte';
+	export let data: PageData;
+
+	// const { data } = response.categories;
+
+	const handleRowClick = (category: Category) => {
+		categoryStore.set(category);
+		goto(`categories/${category.id}`);
+	};
 </script>
 
 <Table
@@ -11,5 +20,5 @@
 		{ title: 'Id', dataIndex: 'id' },
 		{ title: 'Name', dataIndex: 'name' }
 	]}
-	rowClick={(row) => goto(`categories/${row.id}`)}
+	rowClick={handleRowClick}
 />

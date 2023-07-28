@@ -4,16 +4,13 @@
 	import { productStore } from '../../../../../store';
 	import type { PageData } from './$types';
 	export let data: PageData;
-	let product: Product = data.product;
-
-	productStore.set(data.product);
+	let product: Product;
 
 	productStore.subscribe((value) => {
 		product = value;
 	});
 
 	const navigate = () => {
-		productStore.update((content) => (content = product));
 		goto(`${product.id}/edit`);
 	};
 </script>
