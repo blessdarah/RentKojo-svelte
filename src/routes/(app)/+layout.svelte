@@ -29,7 +29,4 @@
 		max-width: 100%;
 		margin: 0 auto;
 	}
-	a[role='button'] {
-		padding: 0.8rem 2rem;
-	}
 </style>
