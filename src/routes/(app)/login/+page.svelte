@@ -2,6 +2,7 @@
 	import axios from 'axios';
 	import { goto } from '$app/navigation';
 	import Button from '../../../components/Button.svelte';
+	import { userStore } from '../../../store';
 
 	let email = 'bayehniville@gmail.com',
 		phoneNumber = '679988809',
@@ -12,12 +13,16 @@
 		password
 	};
 
-	function login() {
-		axios
-			.post('https://rentkojo.com/auth/login', formData)
-			.then((response) => response.data?.success)
-			.then(() => goto('/dashboard'))
-			.catch((err) => console.log(err));
+	async function login() {
+		try {
+			const response = await axios.post('https://rentkojo.com/auth/login', formData);
+			const feedback = await response.data;
+			if (!feedback.success) throw Error(feedback.message);
+			userStore.set(feedback.data);
+			goto('/dashboard');
+		} catch (err) {
+			console.log(err);
+		}
 	}
 </script>
 

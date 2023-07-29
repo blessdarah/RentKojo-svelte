@@ -1,8 +1,16 @@
 export type User = {
-	name: string;
+	id: string;
+	username: string;
+	firstname: string;
+	lastname: string;
+	avatar: string;
 	email: string;
+	country: string;
+	city: string;
 	phoneNumber: string;
+	whatsappNumber: string;
 	address: string;
+	verified: boolean;
 };
 
 export const emptyUser: User = {

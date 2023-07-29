@@ -34,8 +34,8 @@
 				bind:value={search}
 			/>
 		</header>
-		<div class="border border-gray-200 rounded-lg overflow-hidden">
-			<table class="w-full table-auto">
+		<div class="border border-gray-200 rounded-lg overflow-y-hidden overflow-x-auto">
+			<table class="w-full table-auto overflow-x-scroll">
 				<thead>
 					<tr align="left">
 						{#each columns as column}
